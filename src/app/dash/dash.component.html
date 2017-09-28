@@ -1,0 +1,38 @@
+<div class="card">
+  <h3 class="card-header">Payment <input type="button" value="LogOut" class="btn btn-info pull-right" (click)="onLogout()"></h3>
+  <div class="card-block">
+    <h4 class="card-title">Pls provide your card details</h4>
+    <p class="card-text">Our payment system is very secured. </p>
+    <div class="row">
+      <div class="col-md-12">
+      </div>
+    </div>
+    <form #myFrm="ngForm" (ngSubmit)="onPay(myFrm.value)">
+      <div class="row">
+        <div class="col-md-12">
+          <input name="cardNum" type="text" placeholder="Card Number" ngModel>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <input name="cvv" type="text" placeholder="CVV" ngModel>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <input name="password" type="text" placeholder="Password" ngModel>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <input name="cardNm" type="text" placeholder="Card Holder Name" ngModel>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <input type="submit" value="Pay" class="btn btn-info">
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
