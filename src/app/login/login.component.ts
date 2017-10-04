@@ -35,6 +35,14 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+
+    this.login.myObs().subscribe(
+      function (str) {
+
+      },
+      err => { },
+      () => { }
+    );
   }
 
   onSubmit(frm: any) {

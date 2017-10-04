@@ -19,7 +19,7 @@ export class LgnService {
     //   })
     // };
     return this.http.get(
-      `http://192.168.0.112:8080/checkiftrue?email=${eml}&pass=${pass}`
+      `http://192.168.0.103:8080/checkiftrue?email=${eml}&pass=${pass}`
     ).map(data => data.json());
   }
 
@@ -32,8 +32,22 @@ export class LgnService {
     };
 
     return this.http.post(
-      'http://192.168.0.112:8080/savepaymentdata',
+      'http://192.168.0.103:8080/savepaymentdata',
       body
+    );
+  }
+
+  myObs(): Observable<string> {
+    return Observable.create(
+      sub => {
+        for (let i = 0; i < 1000; i++) {
+          sub.next(`${i}`);
+          if (i < 0) {
+            sub.error(new Error());
+          }
+        }
+        sub.complete();
+      }
     );
   }
 }
